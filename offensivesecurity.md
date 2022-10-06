@@ -23,7 +23,7 @@
 - return data it should not or execute a progrom should 
 ###### Payment
 - seeing payment details are sent in cleartest or using weak encryption
-- _Encryption_** : making data unreadable without knowing the secret key or password
+- **_Encryption_** : making data unreadable without knowing the secret key or password
 
 
 ###### Identification and Authentication Failure 
@@ -41,10 +41,10 @@
 - user can implement _mailicous code_ as part of their input --> it can be done bc of the lack of proper validation and sanitization of the user's input 
 
 ##### Cryptographic Failures 
-- _crytography_** --> processes of encryption and decryption of data 
-- _encryption_ --> scrambles cleartest into ciphertext 
+- **_crytography_** --> processes of encryption and decryption of data 
+- **_encryption_** --> scrambles cleartest into ciphertext 
 - - ensures no one can read the data without knowing the secret key 
-- _decryption_ --> converts ciphertext back into cleartext
+- **_decryption_** --> converts ciphertext back into cleartext
 - examples of cryptographic failures: 
 - HTTP: protocol used to acces the web
 - HTTPS: secure version of HTTP 
