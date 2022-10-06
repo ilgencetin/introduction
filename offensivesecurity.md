@@ -41,13 +41,13 @@
 - user can implement _mailicous code_ as part of their input --> it can be done bc of the lack of proper validation and sanitization of the user's input 
 
 ##### Cryptographic Failures 
-- _crytography**_ --> processes of encryption and decryption of data 
+- _crytography_** --> processes of encryption and decryption of data 
 - _encryption_ --> scrambles cleartest into ciphertext 
 - - ensures no one can read the data without knowing the secret key 
 - _decryption_ --> converts ciphertext back into cleartext
 - examples of cryptographic failures: 
 - HTTP: protocol used to acces the web
 - HTTPS: secure version of HTTP 
-- - others can read everything you send over HTTP but not HTTPS 
+-- others can read everything you send over HTTP but not HTTPS 
 - weak cryptographic algorithm 
 - using default or weak keys for cryptographic functions
