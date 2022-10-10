@@ -1,1 +1,2 @@
-## network
+## What is Networking?
+- Networks are simply things connected. 
