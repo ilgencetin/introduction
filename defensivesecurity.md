@@ -25,7 +25,7 @@ _SOC (Security Operations Center):_ team of IT professionals tasked with monitor
 - _DHCP:_ Dynamic Host Configuration Protocol is responsible for assigning IP address to the systems that try to connect to a network. One analogy of the DHCP request would be when you enter a fancy restaurant, and the waiter welcomes you and guides you to an empty table. Know that DHCP has automatically provided your device with the network settings whenever you can join a network without manual configuration.
 
 ###### SOC Services 
-**_Reactive Services:
+**_Reactive Services:_**
 1. **_Monitor security posture:_** monitoring the network and computers for security alerts and notifications and responding to them as the need dictates.
 2. **_Vulnerability Management:_**  finding vulnerabilities in the company systems and patching them. 
 _they are not responsible for them but they assist to this process._
@@ -33,7 +33,7 @@ _they are not responsible for them but they assist to this process._
 4. **_Intrusion detection:_** intrusion detection system (IDS) is used to detect and log intrusions and suspicious packets.
 5. **_Reporting_**
 
-**_Proactive Services:
+**_Proactive Services:_**
 1. **_Network Security Monitoring (NSM):_** monitoring the network data and analyzing the traffic to detect signs of intrusions.
 2. **_Threat hunting:_** SOC assumes an intrusion has already taken place and begins its hunt to see if they can confirm this assumption.
 3. **_Threat intelligence:_** learning about potential adversaries and their tactics and techniques to improve the company’s defences. The purpose would be to establish a threat-informed defence.
