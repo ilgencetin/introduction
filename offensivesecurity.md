@@ -178,9 +178,9 @@
 - email or USB flash memory
 4. **_Exploitation:_**
 - user opens the file and execution of the file starts
-5 **_Installation:_**
+5. **_Installation:_**
 - previous step install the malicious file to system
-6 **_Command& Control (C2):_**
+6. **_Command& Control (C2):_**
 - successfull previous steps gives vision to attacker 
-7 **_Actions on Objectives:_**
+7. **_Actions on Objectives:_**
 - after gaining control over the system, attacker is able to achieve its goals.
