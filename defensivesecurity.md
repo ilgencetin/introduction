@@ -18,7 +18,9 @@ _SOC (Security Operations Center):_ team of IT professionals tasked with monitor
 - _DNS:_ Domain Name System is the protocol responsible for converting a domain name (ilgencetin.com) to an IP adress among other domain name related queries.
 - The SOC can gather information about domain names that internal systems are trying to communicate with by merely inspecting DNS queries.
 - **_Firewall logs:_** 
-- _Firewall:_ device that controls network traffic mainly lettinf them trough or blocking them. Firewall logs can reveal much information about what packets passed or tried to pass through the firewall.
+- _Firewall:_ device that controls network traffic mainly lettinf them trough or blocking them. Firewall logs can reveal much information about what packets passed or tried to pass through the firewall.c
+- - _Source and destination IP addresses:_ IP address is a logical address that allows you to communicate over the Internet.
+- - _Source and destination port numbers:_ computer has IP address and each program on the computer needs a port number to communicate over the network.
 - **_DHCP logs:_** 
 - _DHCP:_ Dynamic Host Configuration Protocol is responsible for assigning IP address to the systems that try to connect to a network. One analogy of the DHCP request would be when you enter a fancy restaurant, and the waiter welcomes you and guides you to an empty table. Know that DHCP has automatically provided your device with the network settings whenever you can join a network without manual configuration.
 
