@@ -18,6 +18,7 @@
 - - More efficient due to new methodologies
 
 - Octet: each sectionof an IP address
+- Octet's range is between 0-255
 ![image](https://user-images.githubusercontent.com/113854816/196631362-aabd538b-6f11-49dd-98a7-0d8641f27827.png)
 
 ###### MAC Addresses
@@ -62,3 +63,15 @@
 ###### What is Router?
 - Router's job to connect networks and pass data between them. 
 - Routing is the label given to the process of data travelling across networks. Routing involves creating a path between networks so that this data can be successfully delivered.
+
+## Subnetting 
+- Splitting up a network into smaller, miniature networks within itself. Subnetting is you deciding who gets what slice & reserving such a slice of this metaphorical cake.
+- Network administrators use subnetting to categorise and assign specific parts of a network to reflect this.
+- subnet mask: 32 bytes
+
+![image](https://user-images.githubusercontent.com/113854816/196676911-595fe407-3c6f-49f2-8209-cf65cd2afa64.png)
+
+## The ARP Protocol (Adress Resolution Protocol)
+- Responsible for allowing devices to identify themselves on a network 
+- ARP helps the device connect with MAC adress and IP adress on the network. 
+-
