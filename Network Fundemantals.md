@@ -85,3 +85,32 @@
 2. ARP Reply
 - MAC address used for physical identifier 
 - IP adress used for logical identifier
+
+## DHCP Dynamic Host Control Protocol 
+- IP addresses can be assigned automatically by using DHCP server
+- if device connects to a network and assigned to IP, it sends out a request (DHCP Discover) to see if any DHCP servers are on the network.
+- **DHCP Discover:** search whether any conneected IP is there or not 
+- **DHCP Offer:** DHCP server returns wwith an IP address the device could use
+- **DHCP Request:** The device then sends a reply confirming it wants the offered IP Address 
+- **DHCP ACK:** acknowledgement about the completion status
+
+## OSI MODEL (Open Systems Interconnection Model)
+- Framework explains the networked devices will send, receive and interpret data.
+- **_ENCAPSULATION_**: key word for when pieces of informatiion get added to data
+- 
+###### LAYER 7: APPLICATION
+- Applications provide Graphical User Interface _GUI_ for users interact with data sent or received. 
+- Other protocols such as DNS (Domain Name System) which is how websiite addresses are translated into IP addresses.
+
+###### LAYER 6: PRESENTATION
+- Layer acts as a translator for daa to and form the layer 7. 
+- The receiving computer will also understand data sent to a computer in one format destined for in another format. For example, when you send an email, the other user may have another email client to you, but the contents of the email will still need to display the same.
+- Security features such as data encryption (like HTTPS when visiting a secure site) occur at this layer.
+
+###### LAYER 5: SESSION 
+- Once data come from layer 6 as translated, layer 5 will begin to create a connection to the other computer that the data destined for. When a connection is established, a session is created. Whilst this connection is active, so is the session.
+- The session layer (layer 5) synchronises the two computers to ensure that they are on the same page before data is sent and received. 
+- Data divided to small sections end sen that way. By this method, if the connection lost, only little chunks that weren't sent yet will be sent again
+- What is worthy of noting is that sessions are unique — meaning that data cannot travel over different sessions, but in fact, only across each session instead.
+- packets: small chunks of data
+- session: connection established
