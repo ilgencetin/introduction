@@ -1,6 +1,6 @@
 ## What is Networking?
 - Networks are simply things connected. 
-- **WWW:*** World Wide Web 
+- **WWW:** World Wide Web 
 - _Internet made up of many small networks all joined together. These small networks called as **Public Networks**_
 - Network can be one of two types such as _private network_ and _public network_
 
@@ -74,4 +74,14 @@
 ## The ARP Protocol (Adress Resolution Protocol)
 - Responsible for allowing devices to identify themselves on a network 
 - ARP helps the device connect with MAC adress and IP adress on the network. 
--
+
+###### How it is work?
+- **_cache:_** spesific books to store information on 
+- Cache stores _identifiers_ for ARP
+- In order to map two identifiers (IP and MAC adress) two message sent:
+1. ARP Request 
+- message broadcasted to every other device found on a network by the device
+-  If the device does have the requested IP address, an ARP reply is returned to the initial device to acknowledge this. The initial device will now remember this and store it within its cache (an ARP entry). 
+2. ARP Reply
+- MAC address used for physical identifier 
+- IP adress used for logical identifier
