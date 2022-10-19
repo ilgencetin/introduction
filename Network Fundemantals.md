@@ -27,6 +27,38 @@
 
 -**_Spoofing:_** stoling and usin another computer's MAC address and using the identity to escape from firewall rules.
 
-###### Pig (ICMP) 
+###### Ping (ICMP) 
 - Internnet Control Message Protocol (ICMP) used within ping to determine the performance of a connection between devices. 
 - The time taken for ICMP packets travelling between devices is measured by ping, such as in the screenshot below. 
+
+## Local Area Network (LAN) Topologies
+- "topology", we are actually referring to the design or look of the network at hand.
+
+###### Star Topology
+- devices are individually connected via a central networking device such as a switch or hub. 
+- Any information sent to a device in this topology is sent via the central device to which it connects.
+- cabling & the purchase of dedicated networking equipment is required for this topology, it is more expensive than any of the other topologies. 
+![image](https://user-images.githubusercontent.com/113854816/196667665-60b9e249-e9a1-426e-a9ac-58503e8fc6fa.png)
+
+###### Bus Topology
+- connection relies upon a single connection which is known as a backbone cable. 
+-  all data destined for each device travels along the same cable, it is very quickly prone to becoming slow and bottlenecked if devices within the topology are simultaneously requesting data.
+-  bus topologies are one of the easier and more cost-efficient topologies
+-   little redundancy in place in case of failures.
+![image](https://user-images.githubusercontent.com/113854816/196667936-a84b6bde-b0ca-4433-ac4e-c5b241026bf2.png)
+
+###### Ring Topology
+- Devices such as computers are connected directly to each other to form a loop, meaning that there is little cabling required and less dependence on dedicated hardware such as within a star topology. 
+-  sending data across the loop until it reaches the destined device, using other devices along the loop to forward the data. 
+-  Because there is only one direction for data to travel across this topology, it is fairly easy to troubleshoot any faults that arise.
+![image](https://user-images.githubusercontent.com/113854816/196668192-a6f3f9f7-8feb-4d74-9c94-4a599433c92f.png)
+
+###### What is a Switch?
+-  dedicated devices within a network that are designed to aggregate multiple other devices such as computers, printers, or any other networking-capable device using ethernet. 
+-  These various devices plug into a switch's port. Switches can connect a large number of devices by having ports of 4, 8, 16, 24, 32, and 64 for devices to plug into.
+-  Both Switches and Routers can be connected to one another. The ability to do this increases the redundancy (the reliability) of a network by adding multiple paths for data to take. If one path goes down, another can be used. 
+![image](https://user-images.githubusercontent.com/113854816/196668504-7e53305f-d627-4cd3-881b-b03817513d4b.png)
+
+###### What is Router?
+- Router's job to connect networks and pass data between them. 
+- Routing is the label given to the process of data travelling across networks. Routing involves creating a path between networks so that this data can be successfully delivered.
