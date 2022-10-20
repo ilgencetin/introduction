@@ -188,3 +188,10 @@
 5. **_FIN:_** clean and properly closing the connection between server and device after interaction completed. 
 6. **_RST:_** ends all communication. This is the last resort and indicates there was some _problem during the process._ For example, if the service or application is not working correctly, or the system has faults such as low resources. 
 - **FIN** packets sends by receiver and also client for completing the communication between them. 
+
+## UDP/IP 
+- **stateless protocol** which means does not need any _constant connection._ 
+- data integrity not a main concern of UDP 
+- **DATA HEADERS:**
+- **_Time to Live:_** expiry timer 
+- **_Source Address:_** 
