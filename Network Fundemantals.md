@@ -149,4 +149,8 @@
 - This layer references the physical components of the hardware used in networking
 - Devices use electrical signals to transfer data between each other in a binary numbering system (1's and 0's).
 - Ethernet cables one of an example 
--  
+
+## PACKETS AND FRAMES   
+- Packers: small chunks of data
+- Frames: within the data, still a data found
+- **Time to Live:**
