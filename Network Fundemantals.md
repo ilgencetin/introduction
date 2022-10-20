@@ -103,7 +103,7 @@
 - Other protocols such as DNS (Domain Name System) which is how websiite addresses are translated into IP addresses.
 
 ###### LAYER 6: PRESENTATION
-- Layer acts as a translator for daa to and form the layer 7. 
+- Layer acts as a translator for data to and form the layer 7. 
 - The receiving computer will also understand data sent to a computer in one format destined for in another format. For example, when you send an email, the other user may have another email client to you, but the contents of the email will still need to display the same.
 - Security features such as data encryption (like HTTPS when visiting a secure site) occur at this layer.
 
@@ -144,6 +144,8 @@
 - Focuses on the physical addressing of the transmission. It receives a packet from the network layer (including the IP address for the remote computer) and adds in the physical MAC (Media Access Control) address of the receiving endpoint.
 - **NIC Network Interface Card:** every network enabled computer has it. comes with unique MAC address to identify it.
 -  data link layer present the data in a format suitable for transmission.
+
+**_IN OSI MODEL, FIREWALLS OPERATE AT LAYER 3 AND LAYER 2_**
 
 ###### LAYER 1: PHYSICAL 
 - This layer references the physical components of the hardware used in networking
@@ -218,3 +220,32 @@
 - Port forwarding opens specific ports (recall how packets work). 
 - Port forwarding is configured at the router of a network.
 ![image](https://user-images.githubusercontent.com/113854816/196885989-1752744d-f22d-45e8-8201-5fe8ced74381.png)
+
+##### FIREWALL 
+- Device within a network whether traffic is allowed to enter and exit. 
+- Firewall permit or deny traffic based on:
+1. Where the traffic is coming from? (has the firewall been told to accept/deny traffic from a specific network?) 
+2. Where is the traffic going to? (has the firewall been told to accept/deny traffic destined for a specific network?)
+3. What port is the traffic for? (has the firewall been told to accept/deny traffic destined for port 80 only?)
+4. What protocol is the traffic using? (has the firewall been told to accept/deny traffic that is UDP, TCP or both?)
+
+**PRIMARY CATEGORIES OF FIREWALLS:**
+1. **STATEFUL:** Uses the entire information, not packets of info.
+- Determines the behaviour of a device based upon the entire connection.
+- Decision making is dynamic. Firewall could allow the first parts of a TCP handshake that would later fail. 
+- If a connection from a host is bad, it will block the entire device.
+2. **STATELESS:** Uses a static set of rules to determine whether or not individual packets are acceptable or not.
+- Some device sending bad packet will not necessarily mean that the entire device is then blocked. 
+- These firewalls are only effective as the rules that are defined within them. If a rule is not exactly matched, it is effectively useless.
+- However, these firewalls are great when receiving large amounts of traffic from a set of hosts (such as a Distributed Denial-of-Service attack)
+
+##### VPN Basics
+- VPN Virtual Private Network 
+- **Tunnel:** created a dedicated path between each other over the internet 
+- VPN is a technology that allows devices on separate networks over tunnels.
+- Only devices within the same network (such as within a business) can directly communicate.
+**Advantages of VPN**
+- **_Allows networks in different geographical locations to be connected._** 
+- **_Privacy_** VPN uses encryption to protect data. This enables understood between the devices it was being sent from and is destined for, meaning the data isn't vulnerable to sniffing.
+- **_Anonyminity_**  Your traffic can be viewed by your ISP and other intermediaries and therefore tracked. VPN that logs all of your data/history is essentially the same as not using a VPN in this regard.
+- 
