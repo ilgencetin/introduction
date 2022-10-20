@@ -177,4 +177,14 @@
 5. **_Sequence Number:_** When connection occurs, the first piece of data transmitted one number. 
 6. **_Acknowledgement Number:_** After a piece of data has been given a sequence number, the number for the next piece of data will have the sequence number + 1.
 7. **_Checksum:_** This value is what gives TCP integrity. Mathematical calculation done and correction with the TCP must be checked and if it the value is not true, data must be corrupt.
-8. 
+8. **_Data:_** bytes of a file that is being transmitted
+9. **_Flag:_** This header determines how the packet should be handled by either device during the handshake process. Specific flags will determine specific behaviours (like background rules)
+
+**THREE-WAY HANDSHAKE USES SOME MESSAGES TO CONSIST CONNECTION BETWEEN DEVICES:**
+1. **_SYN:_** first packet send to the client and _synchronise_ the two devices together 
+2. **_SYN/ACK:_** packet is sent by the receiving device (server) to acknowledge the synchronisation attempt from the client.
+3. **_ACK:_** packet can be use by client or server to announce that series of packets have been successfully received.
+4. **_DATA:_** after connection established, data (such as bytes of a file) is sent vie DATA message.
+5. **_FIN:_** clean and properly closing the connection between server and device after interaction completed. 
+6. **_RST:_** ends all communication. This is the last resort and indicates there was some _problem during the process._ For example, if the service or application is not working correctly, or the system has faults such as low resources. 
+- **FIN** packets sends by receiver and also client for completing the communication between them. 
