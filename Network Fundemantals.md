@@ -248,4 +248,13 @@
 - **_Allows networks in different geographical locations to be connected._** 
 - **_Privacy_** VPN uses encryption to protect data. This enables understood between the devices it was being sent from and is destined for, meaning the data isn't vulnerable to sniffing.
 - **_Anonyminity_**  Your traffic can be viewed by your ISP and other intermediaries and therefore tracked. VPN that logs all of your data/history is essentially the same as not using a VPN in this regard.
-- 
+
+**VPN TECHNOLOGIES**
+- **_PPP:_** This technology used by _PPTP_ to allow for authentication and provide encryption of data. VPNs work by using a private key and public certificate (similar to SSH).
+- Only encrypts & provides the authentication of data 
+- This technology is not capable of leaving a network by itself.
+- **_PPTP:_** Point to Point Tunneling Protocol 
+- technology that allows the data from PPP to travel and leave a network. 
+- Easy set up and supported by most devices but weakly encrypted.
+- **_IPSec:_** Internet Protocol Security encrypts data using the existing Internet Protocol (IP) framework.
+- Hard to set up but strong encryption 
