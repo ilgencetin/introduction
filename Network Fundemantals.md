@@ -114,3 +114,39 @@
 - What is worthy of noting is that sessions are unique — meaning that data cannot travel over different sessions, but in fact, only across each session instead.
 - packets: small chunks of data
 - session: connection established
+
+###### LAYER 4: TRANSPORT
+- Transmitting data across a network and can be a little bit difficult to grasp.
+- It has error checking and reliability skills.
+- Generally used for sharing, internet browsing or sending an email bc the data chunks must be send completely in these procedures. There is no mean of sending little chunks of data's.
+- When data send between devices, two protocols based:
+1. TCP (Transmission Control Protocol) 
+- Constant connection between the two devices for the amount of time it takes for the data to be sent and received.
+![image](https://user-images.githubusercontent.com/113854816/196862302-ef30c261-a56c-4d6a-8363-842a530ddc93.png)
+2. UDP (User Datagram Protocol)
+- Any data that gets sent via UDP is sent to the computer whether it gets there or not, the connection between devices is not guaranteed, indeed there is no _synchronisation_
+- Usefull for small data 
+- Used for vide streaming by using pixels
+![image](https://user-images.githubusercontent.com/113854816/196862850-257ed1e7-57d5-49af-97af-1d20fd531fa9.png)
+
+###### LAYER 3: NETWORK 
+- Where the magic of **routing & re-assembly** of data takes place.
+- Firstly, routing simply determines the most optimal path in which these chunks of data should be sent.
+- OSPF (Open Shortest Path First)
+- RIP (Routing Information Protocol)
+- The factors that decide what route is taken is decided by the following:
+- What path is the shortest? I.e. has the least amount of devices that the packet needs to travel across.
+- What path is the most reliable? I.e. have packets been lost on that path before?
+- Which path has the faster physical connection? I.e. is one path using a copper connection (slower) or a fibre (considerably faster)?
+- Everything dealt with IP addresses. Routers capable of delivering packets includes in this layer.
+
+###### LAYER 2: DATA LINK
+- Focuses on the physical addressing of the transmission. It receives a packet from the network layer (including the IP address for the remote computer) and adds in the physical MAC (Media Access Control) address of the receiving endpoint.
+- **NIC Network Interface Card:** every network enabled computer has it. comes with unique MAC address to identify it.
+-  data link layer present the data in a format suitable for transmission.
+
+###### LAYER 1: PHYSICAL 
+- This layer references the physical components of the hardware used in networking
+- Devices use electrical signals to transfer data between each other in a binary numbering system (1's and 0's).
+- Ethernet cables one of an example 
+-  
