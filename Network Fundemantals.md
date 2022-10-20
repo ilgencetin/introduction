@@ -190,8 +190,31 @@
 - **FIN** packets sends by receiver and also client for completing the communication between them. 
 
 ## UDP/IP 
-- **stateless protocol** which means does not need any _constant connection._ 
+- **Stateless protocol** which means does not need any _constant connection._ 
 - data integrity not a main concern of UDP 
 - **DATA HEADERS:**
 - **_Time to Live:_** expiry timer 
-- **_Source Address:_** 
+- **_Source Address:_** The IP address of the device that the packet is being sent **from** so that data knows where to **return to.**
+- **_Source Port:_** This value is the port opened by the sender to send the TCP packet from. This value is chosen randomly (out of the ports from 0-65535 that aren't already in use at the time).
+- **_Destination Port:_** This value is the port number that an application or service is running on the remote host (the one receiving data); for example, a webserver running on port 80. Unlike the source port, this value is not chosen at random.
+- **_Data:_** bytes of a file that is being transmitted
+- UDP is a _stateless protocol_ so that, there is no acknowledgement packet sent to receiver or server.
+- **Ex: TCP used for sending a file, UDP used for having a video call**
+
+## PORTS 
+- Ports are an essential point in which data can be exchanged.
+- Ports enforces strict rules when communicating with one another. 
+- Ports can be range of 0 to 65535 in computing.
+- Regardless the randomity of the ports, there is standart rules for some ports. Some platforms enforced to sent over a strict number of a port. 
+- Any port that is within **0 and 1024 (1,024) is known as a common port.
+- You can find spesific ports used for spesific tasks in here: http://www.vmaxx.net/techinfo/ports.htm 
+![image](https://user-images.githubusercontent.com/113854816/196883573-c5517f0d-16fb-4d75-a967-1acea8911c63.png)
+- What is worth noting here is that these protocols only follow the standards. I.e. you can administer applications that interact with these protocols on a different port other than what is the standard (running a web server on 8080 instead of the 80 standard port). Note, however, applications will presume that the standard is being followed, so you will have to provide a colon (:) along with the port number.
+
+## PORT FORWARDING
+- We need to port forwarding process for making available the devices work within the different network. 
+- Within this network, the server with an IP address of "192.168.1.10" runs a webserver on port 80. Only the two other computers on this network will be able to access it (this is known as an intranet).
+- If the admin wants the website accesible to the public using the internet
+- Port forwarding opens specific ports (recall how packets work). 
+- Port forwarding is configured at the router of a network.
+![image](https://user-images.githubusercontent.com/113854816/196885989-1752744d-f22d-45e8-8201-5fe8ced74381.png)
