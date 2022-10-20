@@ -151,6 +151,30 @@
 - Ethernet cables one of an example 
 
 ## PACKETS AND FRAMES   
-- Packers: small chunks of data
+- Packets: small chunks of data
 - Frames: within the data, still a data found
-- **Time to Live:**
+- **Time to Live:** Expiry timer for the packet which can not manage to reach a host 
+- **Checksum:** Integrity checking for protocols such as TCP/IP. If any data changes, value will be different and corrupts.
+- **Source Address:**  The IP address of the device that the packet is being sent **from** so that data knows where to **return to.**
+- **Destination Address:** The device's IP address the packet is being sent to so that data knows where to travel next. 
+
+## TCP/IP 
+- TCP Transmission Control Protocol 
+- TCP/IP protocol is a summarized version of OSI Model 
+- Four layers:
+1. Application 
+2. Transport 
+3. Internet 
+4. Network Interface 
+- Information is added to each layer as packets. _Encapsulation and decapsulation occurs._
+- TCP connection based, connection both a client and a device acting as a server **before** data sent.
+- **_Three-way handshake:_** TCP guarantees that any data sent will be received on the other end.
+- ENCAPSULATED TCP PACKETS: 
+1. **_Source Port:_** This value is the port opened by the sender to send the TCP packet from. This value is chosen randomly (out of the ports from 0-65535 that aren't already in use at the time).
+2. **_Destination Port:_** This value is the port number that an application or service is running on the remote host (the one receiving data); for example, a webserver running on port 80. Unlike the source port, this value is not chosen at random.
+3. **_Source IP:_** IP address of the sender of the packet
+4. **_Destination IP:_** IP address of the receiver of the packet
+5. **_Sequence Number:_** When connection occurs, the first piece of data transmitted one number. 
+6. **_Acknowledgement Number:_** After a piece of data has been given a sequence number, the number for the next piece of data will have the sequence number + 1.
+7. **_Checksum:_** This value is what gives TCP integrity. Mathematical calculation done and correction with the TCP must be checked and if it the value is not true, data must be corrupt.
+8. 
