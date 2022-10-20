@@ -56,13 +56,25 @@
 
 ###### What is a Switch?
 -  dedicated devices within a network that are designed to aggregate multiple other devices such as computers, printers, or any other networking-capable device using ethernet. 
+-  Switches can facilitate many devices (from 3 to 63) using Ethernet cables.
 -  These various devices plug into a switch's port. Switches can connect a large number of devices by having ports of 4, 8, 16, 24, 32, and 64 for devices to plug into.
 -  Both Switches and Routers can be connected to one another. The ability to do this increases the redundancy (the reliability) of a network by adding multiple paths for data to take. If one path goes down, another can be used. 
 ![image](https://user-images.githubusercontent.com/113854816/196668504-7e53305f-d627-4cd3-881b-b03817513d4b.png)
 
+- Switches can operate at both layer 2 and layer 3 of the OSI model. However, these are exclusive in the sense that Layer 2 switches cannot operate at layer 3.
+- These switches are more sophisticated than layer 2, as they can perform some of the responsibilities of a router. Namely, these switches will send frames to devices (as layer 2 does) and route packets to other devices using the IP protocol. 
+
+![image](https://user-images.githubusercontent.com/113854816/196898268-4f840a88-f17b-423a-aef6-894e1b1ff770.png)
+
+
+###### VLAN (Virtual Local Area Network) 
+- Allows specific devices within a network to be virtually split up. They can benefit from things such as an internet connection but treated as seperately. 
+
 ###### What is Router?
 - Router's job to connect networks and pass data between them. 
 - Routing is the label given to the process of data travelling across networks. Routing involves creating a path between networks so that this data can be successfully delivered.
+- Routers operate at Layer 3 of the OSI model. 
+- They often feature an interactive interface (such as a website or a console) that allows an administrator to configure various rules such as port forwarding or firewalling.
 
 ## Subnetting 
 - Splitting up a network into smaller, miniature networks within itself. Subnetting is you deciding who gets what slice & reserving such a slice of this metaphorical cake.
