@@ -3,7 +3,7 @@
 - **WWW:** World Wide Web 
 - _Internet made up of many small networks all joined together. These small networks called as **Public Networks**_
 - Network can be one of two types such as _private network_ and _public network_
-
+ 
 ##### Identifying Devices on a Network
 - IP Address: can be change like our name.
 - A Media Access Control Adress (MAC): can not change like our fingerprint.
