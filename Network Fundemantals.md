@@ -63,11 +63,15 @@
 
 - Switches can operate at both layer 2 and layer 3 of the OSI model. However, these are exclusive in the sense that Layer 2 switches cannot operate at layer 3.
 - These switches are more sophisticated than layer 2, as they can perform some of the responsibilities of a router. Namely, these switches will send frames to devices (as layer 2 does) and route packets to other devices using the IP protocol. 
+- Layer 3 also does routing 
+- Layer 2 works only with MAC Adresses
 
 ![image](https://user-images.githubusercontent.com/113854816/196898268-4f840a88-f17b-423a-aef6-894e1b1ff770.png)
 
 
 ###### VLAN (Virtual Local Area Network) 
+- VLAN segmentation
+- Also used for protection of malwares (ransomware)
 - Allows specific devices within a network to be virtually split up. They can benefit from things such as an internet connection but treated as seperately. 
 
 ###### What is Router?
