@@ -103,6 +103,11 @@
 - MAC address used for physical identifier 
 - IP adress used for logical identifier
 
+**Possible Security Problems**
+- spoofing
+- sniffing
+- man-in-the-middle attack
+
 ## DHCP Dynamic Host Control Protocol 
 - IP addresses can be assigned automatically by using DHCP server
 - if device connects to a network and assigned to IP, it sends out a request (DHCP Discover) to see if any DHCP servers are on the network.
