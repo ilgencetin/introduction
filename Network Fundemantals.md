@@ -81,7 +81,7 @@
 - They often feature an interactive interface (such as a website or a console) that allows an administrator to configure various rules such as port forwarding or firewalling.
 
 ## Subnetting 
-- DMZ 
+- BHCP 
 - Splitting up a network into smaller, miniature networks within itself. Subnetting is you deciding who gets what slice & reserving such a slice of this metaphorical cake.
 - Network administrators use subnetting to categorise and assign specific parts of a network to reflect this.
 - subnet mask: 32 bytes
