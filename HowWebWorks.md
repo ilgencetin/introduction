@@ -48,3 +48,16 @@
 ## URL (Uniform Resource Locator)
 ![image](https://user-images.githubusercontent.com/113854816/196927415-31ad9c05-9e83-4d2c-8376-944db637c2d1.png)
 
+- **Scheme:** what protocol used for accessing the resource such as HTTP,  HTTPS, FTP 
+- **User:** Some services require authentication to log in 
+- **Host:** Domain name or IP address of the server we wish to enter. 
+- **Port:** usually 80 for HTTP and 443 for HTTPS
+- **Path:** file name or location of the resource you are trying to access.
+- **Query String:** Extra bits of information that can be sent to the requested path. For example, /blog?id=1 would tell the blog path that you wish to receive the blog article with the id of 1.
+- **Fragment:** reference to a location on the actual page requested. commonly used for long content and certain part of the page directly linked to it.
+
+###### Making a Request
+1. **GET /HTTP/1.1** Request is sending
+2. **Host: ilgencetin.com** website we are searching
+3. **User-Agent: Mozilla/5.0 Firefox/87.0** web server we are using
+4. **Referer: https://ilgencetin.com** web server that web page that referred to us 
