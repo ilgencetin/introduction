@@ -33,8 +33,57 @@
 - 
 ![image](https://user-images.githubusercontent.com/113854816/200820957-15477242-ec01-47ee-88ad-1053f3146e25.png)
 
-
 -  **-sU** UDP Scans 
+-  Unlike TCP, UDP connections are stateless
+-  When a packet is sent to an open UDP port, there should be no response. When this happens, Nmap refers to the port as being open|filtered. It can be open but it could be firewalled. If it gets a UDP response (which is very unusual), then the port is marked as open. 
+-  In general, there is no response,  in which case the request is sent a second time as a double-check. If there is still no response then the port is marked open|filtered and Nmap moves on.
+-  When the packet send to _closed_ port, target respond with an ICMP packet containing message that the port unreachable.
+-  When we compare with TCP scans, these scans are much more slow so that it's usually good practice to run an Nmap scan with _--top-ports < number >_
+-  nmap -sU --top-ports 20 < target > --> will scan the top 20 most commonly used UDP ports
+  
 - **-sN** TCP Null Scans
-- **-sF** TCP FIN Scans 
+- when the TCP request is sent with no flags set at all. As per the RFC, the target host should respond with a RST if the port is closed.
+![image](https://user-images.githubusercontent.com/113854816/200827315-7b2a6bf0-b4e3-425b-a936-b2babf88d284.png)
+
+- **-sF** TCP FIN Scans
+- work in an almost identical fashion; however, instead of sending a completely empty packet, a request is sent with the FIN flag (usually used to gracefully close an active connection). Once again, Nmap expects a RST if the port is closed.
+
+![image](https://user-images.githubusercontent.com/113854816/200827555-8273200d-1e39-4527-abcd-c5361ade83a7.png)
+
 - **-sX** TCP Xmas Scans 
+- send a malformed TCP packet and expects a RST response for closed ports. It's referred to as an xmas scan as the flags that it sets (PSH, URG and FIN) give it the appearance of a blinking christmas tree when viewed as a packet capture in Wireshark.
+
+![image](https://user-images.githubusercontent.com/113854816/200827658-37c26ac4-96f3-4366-9b44-1d9c2bbe8a86.png)
+
+- NULL, FIN and Xmas scans will only ever identify ports as being open|filtered, closed, or filtered. If a port is identified as filtered with one of these scans then it is usually because the target has responded with an ICMP unreachable packet.
+- In particular Microsoft Windows (and a lot of Cisco network devices) are known to respond with a RST to any malformed TCP packet -- regardless of whether the port is actually open or not.
+- Reason of using these three scan types: **_firewall evasion**_
+
+**PING SWEEP:**  Nmap sends an ICMP packet to each possible IP address for the specified network. When it receives a response, it marks the IP address that responded as being alive. 
+- to perform a ping sweep: **-sn**
+- The -sn switch tells Nmap not to scan any ports -- forcing it to rely primarily on ICMP echo packets (or ARP requests on a local network, if run with sudo or directly as the root user) to identify targets. In addition to the ICMP echo requests, the -sn switch will also cause nmap to send a TCP SYN packet to port 443 of the target, as well as a TCP ACK (or TCP SYN if not run as root) packet to port 80 of the target.
+
+##### NSE Scripting
+- Nmap Scripting Engine (NSE)
+- performs in LUA language
+- safe:- Won't affect the target
+- intrusive: Not safe, likely to affect the target
+- vuln:- Scan for vulnerabilities
+- exploit: Attempt to exploit a vulnerability
+- auth: Attempt to bypass authentication for running services (e.g. Log into an FTP server anonymously)
+- brute:- Attempt to bruteforce credentials for running services
+- discovery:- Attempt to query running services for further information about the network (e.g. query an SNMP server).
+
+
+- NMAP scripts in Linux --> /usr/share/nmap/scripts 
+- https://nmap.org/nsedoc/scripts/
+- Searching for downloaded scripts:
+1. ls -l /usr/share/nmap/scripts/*ftp*
+2. grep "ftp" /usr/share/nmap/scripts/script.db.
+3. /usr/share/nmap/scripts/script.db
+
+
+If scripts are missing: 
+- sudo apt update && sudo apt install nmap
+- sudo wget -O /usr/share/nmap/scripts/<script-name>.nse https://svn.nmap.org/nmap/scripts/<script-name>.nse). This must then be followed up with nmap --script-updatedb, which updates the script.db
+5. grep "safe" /usr/share/nmap/scripts/script.db
