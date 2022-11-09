@@ -61,3 +61,101 @@
 2. **Host: ilgencetin.com** website we are searching
 3. **User-Agent: Mozilla/5.0 Firefox/87.0** web server we are using
 4. **Referer: https://ilgencetin.com** web server that web page that referred to us 
+
+###### GET Request: 
+- Getting information from a web server
+###### POST Request:
+- Submitting data to the web server and potentially creating new records
+###### PUT Request:
+- Submitting data to a web server to update information
+###### DELETE Request:
+- Deleting info/records from a web server.
+
+![image](https://user-images.githubusercontent.com/113854816/200759699-eff4c5f5-8e87-4fea-af61-802a1eaba0b8.png)
+
+**HTTPS STATUS CODE:** informing the client of the outcome of their request and also potentially how to handle it. Always found in HTTP server respond's first line.
+
+## Headers
+- Headers are additional bits of data you can send to the web server when making requests.
+##### COMMON REQUEST HEADERS:
+**_HOST:_** some web servers host multiple websites so by using host headers, you can seperate them and tell it which one you require, otherwise default website for the server will come.
+**_USER-AGENT:_** Browser software and version number, some elements of HTML, JavaScript and CSS are only available in certain browsers. 
+**_CONTENT_LENGTH:_** Tells to web server how much data to expect in the web request. Server will be sure to not missing any data.
+**_Accept-Encoding:_** Tells the web server what types of compression methods the browser supports so the data can be made smaller for transmitting over the internet.
+**_Cookie:_** Data sent to the server to help remember your information.
+
+##### COMMON RESPONSE HEADERS:
+**_Set-Cookie:_** Information to store which gets sent back to the web server on each request
+**_Cache-Control:_** How long to store the content of the response in the browser's cache before it requests it again.
+**_Content-Type:_** his tells the client what type of data is being returned, i.e., HTML, CSS, JavaScript, Images, PDF, Video, etc. Using the content-type header the browser then knows how to process the data.
+**_Content-Encoding:_** What method has been used to compress the data to make it smaller 
+
+## COOKIES
+- Cookies are saved when you receive a "Set-Cookie" header from a web server.Then every further request you make, you'll send the cookie data back to the web server. Because HTTP is stateless (doesn't keep track of your previous requests), cookies can be used to remind the web server who you are, some personal settings for the website or whether you've been to the website before. 
+- Cookies mainly used for website authentication 
+- Usually they are not clear-text string but a token
+- Cookies are saved when you receive a "Set-Cookie" header from a web server. 
+- **_TOKEN:_** unique secret code that isn't easily humanly quessable 
+
+## HOW WEBSITES WORK?
+- When you visit a website, your browser (like Safari or Google Chrome) makes a request to a web server asking for information about the page you're visiting. It will respond with data that your browser uses to show you the page; a web server is just a dedicated computer somewhere else in the world that handles your requests.
+- Two major components:
+1. Front End (Client-Side): browser renders a website
+2. Back End (Server-Side): server processes your request and returns a response
+
+Websites created by using:
+- **HTML (HyperText Markup Language:** to build websites and define the structure.
+- **CSS:** to make websites look pretty by adding styling options 
+- **JavaScript:** implement complex features on pages using interactivity
+
+Structure of which is the same for every website:
+![image](https://user-images.githubusercontent.com/113854816/200765734-3bdf0086-4633-42e3-a015-8c486cceefcf.png)
+
+**Structure:** 
+- **<!DOCTYPE html>:** defines that page is a HTML5 document, this helps standardisation across different browsers and tells the browser use it.
+-**< html>:** root element, all other elements come after that code.
+-**< head>:** contains information about the page (page title)
+- **< body>:** defines HTML document's body; only content inside the body is shown in the browser
+- **< h1>:** large heading
+- **< p>:** paragraph
+- **< button>**
+- **< img>**
+
+**HTML VS. JAVASCRIPT**
+- HTML only used for creating the website structure, JS gives as dynamic structure, which controls functionality of web pages.
+- JavaScript added within the page with source code and can be loaded with < script> or included remotely with src attribute:  < script src=...>
+ 
+##### SENSITIVE DATA EXPOSURE 
+- Sensitive clear-text information did not protected to the end-user, usually can be found in a site's frontend source code. 
+- Website developer may have forgotten remove login credentials, hidden links to private parts of the website or other sensitive data shown in HTML or JavaScript.
+
+##### HTML INJECTION 
+- Occurs when unfiltered user input is displayed on the page. 
+- If a website fails to sanitise user input (filter any "malicious" text that a user inputs into a website), and that input is used on the page, an attacker can inject HTML code into a vulnerable website.
+- **_Input sanitisation:_** as information a user inputs into a website is often used in other frontend and backend functionality.
+
+**LOAD BALANCERS:**
+- Provide to feauters: ensuring high traffic websites can handle the load and providing failover if a server becomes unresponsive.
+- When you make a request to a website with load balancers, request firstly goes to load balancer and after that request goes to multiple servers
+- **_round-robin:_** sends it to each server in turn
+- **_weighted:_** checks how many requests a server is currently dealing with and sends it to the least busy one.
+- **_health check:_** checkes whether server responds or not and if it not, stops traffic until the respond comes.
+
+**CDN (Content Delivery Networks):**
+- Cuts down traffic to a busy website. 
+- Host static files from your website (JS, CSS, img, vid) and host them across several servers all over the world.
+- When request comes, CDN finds out the nearest server which is phsically located and send the request there. 
+
+**DATABASES**
+- Websites search for information in the databases and MySQLi MSSQL, Postgres are some examples of these databases.
+
+**WAF (Web Application Firewall)**
+- Sits between web request and the web server 
+- _Primary purpose:_ protect webserver from hacking or DoS attacks. 
+- Checks the requests sended from real browser or bot 
+- _Rate limiting::_ only certain amount of requests from an IP can be obtained. 
+- If otherwise, requests dropped and never sent to the webserver
+
+**Web Server**
+- A web server is a software that listens for incoming connections and then utilises the HTTP protocol to deliver web content to its clients.
+- Web Server Software: Apache, Nginc, IIS and NodeJS
