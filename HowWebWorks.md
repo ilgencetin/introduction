@@ -159,3 +159,8 @@ Structure of which is the same for every website:
 **Web Server**
 - A web server is a software that listens for incoming connections and then utilises the HTTP protocol to deliver web content to its clients.
 - Web Server Software: Apache, Nginc, IIS and NodeJS
+
+**Virual Hosts**
+- Web servers can host multiple websites with different domain names; to achieve this, they use virtual hosts. 
+- The web server software checks the hostname being requested from the HTTP headers and matches that against its virtual hosts (virtual hosts are just text-based configuration files). 
+- If it finds a match, the correct website will be provided. If no match is found, the default website will be provided instead.
