@@ -90,9 +90,48 @@ If scripts are missing:
 
 
 ##### FIREWALL EVASION
--Pn:  tells Nmap to not bother pinging the host before scanning it. This means that Nmap will always treat the target host(s) as being alive, effectively bypassing the ICMP block; however, it comes at the price of potentially taking a very long time to complete the scan (if the host really is dead then Nmap will still be checking and double checking every specified port).
--f:- Used to fragment the packets (i.e. split them into smaller pieces) making it less likely that the packets will be detected by a firewall or IDS.
+- Pn:  tells Nmap to not bother pinging the host before scanning it. This means that Nmap will always treat the target host(s) as being alive, effectively bypassing the ICMP block; however, it comes at the price of potentially taking a very long time to complete the scan (if the host really is dead then Nmap will still be checking and double checking every specified port).
+- f:- Used to fragment the packets (i.e. split them into smaller pieces) making it less likely that the packets will be detected by a firewall or IDS.
 alternative for -f: providing more control over the size of the packets: --mtu < number>, accepts a maximum transmission unit size to use for the packets sent. This must be a multiple of 8.
---scan-delay <time>ms:- used to add a delay between packets sent. This is very useful if the network is unstable, but also for evading any time-based firewall/IDS triggers which may be in place.
---badsum:- this is used to generate in invalid checksum for packets. Any real TCP/IP stack would drop this packet, however, firewalls may potentially respond automatically, without bothering to check the checksum of the packet. As such, this switch can be used to determine the presence of a firewall/IDS.
+- -scan-delay < time>ms:- used to add a delay between packets sent. This is very useful if the network is unstable, but also for evading any time-based firewall/IDS triggers which may be in place.
+- -badsum:- this is used to generate in invalid checksum for packets. Any real TCP/IP stack would drop this packet, however, firewalls may potentially respond automatically, without bothering to check the checksum of the packet. As such, this switch can be used to determine the presence of a firewall/IDS.
 https://nmap.org/book/man-bypass-firewalls-ids.html
+
+  
+ ##### PORT SCANNING 
+ **6 NMAP STAGES**z
+ 1. **_OPEN:_** service is listening on the specified port.
+ 2. **_CLOSED:_** no service is listening on the specified port, although the port is accessible. By accessible, we mean that it is reachable and is not blocked by a firewall or other security appliances/programs.
+ 3. **_FILTERED:_** Nmap cannot determine if the port is open or closed because the port is not accessible. This state is usually due to a firewall preventing Nmap from reaching that port. Nmap’s packets may be blocked from reaching the port; alternatively, the responses are blocked from reaching Nmap’s host.
+ 4. **_UNFILTERED:_** Nmap cannot determine if the port is open or closed, although the port is accessible. This state is encountered when using an ACK scan -sA.
+ 5. **_OPEN|FILTERED:_** Nmap cannot determine whether the port is open or filtered.
+ 6. **_CLOSED|FILTERED:_** Nmap cannot determine whether the port is closed or filtered.
+
+- Port 53: DNS 
+- Port 22: TCP 
+
+##### TCP HEADER FLAGS:
+**1. URG:** Urgent pointer filed is significant. Incoming data is urgent, data classified as URG flag is set to processed immediately.
+**2. ACK:** Acknowledge the receipt of a TCP segment and significant.
+**3. PSH:** Push flag asking TCP to pass the data to the application promptly.
+**4. RST:** Reset the connection. firewall, might send it to tear a TCP connection.  This flag is also used when data is sent to a host and there is no service on the receiving end to answer.
+**5. SYN:** Synchronize flag is used to initiate a TCP 3-way handshake and synchronize sequence numbers with the other host. The sequence number should be set randomly during TCP connection establishment.
+**6. FIN:** The sender has no more data to send.
+
+- _NOTE:_ If you are not a privilged user (root or sudoer) a TCP connect scan is the only possible option to discover open TCP ports. 
+- A closed TCP port responds to a SYN packet with **RST/ACK to indicate that it is not open.**
+- sT --> TCP connect scan 
+- -F may be used to enable fast mode and decrease the number of scanned ports from 1000 to 100 most common ports 
+- -r scan the ports in consecutive order instead of random order 
+
+###### TCP SYN SCAN 
+- SYN scan does not need to complete the TCP 3-way handshake, it tears down the connection once it receives a response from the server. 
+- -sS option used for this option 
+- -sT TCP connect scan traffic 
+
+-_NOTE:_ TCP SYN scan is the default scan mode when running Nmap as a privileged user, running as root or using sudo, and it is a very reliable choice. 
+
+
+###### UDP SCAN 
+- UDP is a connectionless protocol, it does not require any handshake 
+- TCP SYN scan is the default scan mode when running Nmap as a privileged user, running as root or using sudo, and it is a very reliable choice. 
